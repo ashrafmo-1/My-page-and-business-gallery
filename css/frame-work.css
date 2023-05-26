@@ -1,0 +1,57 @@
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.m-b-5 {
+    margin-bottom: 5px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px;
+}
+
+.fs-13 {
+    font-size: 13px;
+}
+
+.container {
+    max-width: 1024px;
+    margin-inline: 24px;
+}
+
+.section {
+    padding-block: 40px;
+}
+
+.section-border {
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 55px;
+}
+
+.section-title,
+.section-subtitle {
+    text-align: center;
+}
+
+.section-title {
+    font-size: var(--h1-font-size);
+    font-weight: var(--weigth-bold);
+    margin-bottom: 9px;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    margin-bottom: 50px;
+}
+
+.main {
+    overflow: hidden;
+    /*for animation*/
+}
