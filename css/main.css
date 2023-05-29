@@ -495,13 +495,9 @@ img {
 }
 
 .services-title {
-    font-size: var(--h2-font-size);
     font-weight: var(--weight-medium);
-    margin: 10px 0 25px 0;
-}
-
-.description {
-    padding-bottom: 5px;
+    margin: 10px 0 20px 0;
+    font-size: 10px;
 }
 
 .services-border {
@@ -542,6 +538,7 @@ img {
         display: block;
     }
 }
+
 /* END SERVICES */
 
 .projects-container {
