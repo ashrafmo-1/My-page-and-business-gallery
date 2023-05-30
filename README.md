@@ -3,6 +3,6 @@
 
 ## code right by html, css languge
 
--used emailjs 👀
+-used emailjs, To send emails 👀
 
 -https://www.emailjs.com/
