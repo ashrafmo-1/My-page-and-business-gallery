@@ -12,7 +12,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     emailjs.send('service_mlix524', 'template_3q4wxrp', formData, '6QvUOksXSN0oTjN1s')
         .then(function (response) {
             console.log('Email sent!', response.status, response.text);
-            alert('Email sent successfully!');
+            alert('Email sent successfully! 💖🤝');
         }, function (error) {
             console.log('Error sending email:', error);
             alert('An error occurred while sending the email.');
