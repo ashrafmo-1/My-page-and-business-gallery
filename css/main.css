@@ -38,11 +38,6 @@
     --z-normal: 1;
     --z-tooltop: 10;
     --z-fix: 99;
-
-    /* responsive device */
-    @media screen and (min-width: 1024px) {
-        :root {}
-    }
 }
 
 a {
@@ -700,6 +695,7 @@ img {
 .contact-message {
     font-size: 15px;
     font-family: var(--body-font);
+    color: var(--main-color);
 }
 
 .contact-form .contact-btn {
