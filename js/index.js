@@ -61,7 +61,7 @@ gotop.onclick = function() {
     });
 };
 
-let changegopTitle = document.querySelector('.home .home-title span');
+let changegopTitle = document.querySelector('.home .changegopTitle');
 const textload = () => {
     setTimeout(() => {
         changegopTitle.textContent = 'front End Develober'

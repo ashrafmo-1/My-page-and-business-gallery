@@ -216,15 +216,50 @@ img {
     row-gap: 15PX;
 }
 
-.home-title {
+
+/* .home-title {
     text-align: center;
     font-size: var(--big-font-size);
     letter-spacing: 0.5px;
     margin-bottom: 10px;
+} */
+
+.h-text {
+    padding-top: 200px;
+    margin-left: 60px;
 }
 
-.home-title span {
-    animation: jopTitle 0.7s;
+.h-animate .text {
+    position: relative;
+    color: #00C9F3;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.h-animate .text.first-text {
+    color: #FFF;
+}
+
+.text.changegopTitle:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--body-color);
+    border-left: 2px solid #00C9F3;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%,
+    60% {
+        left: calc(100% + 4px);
+    }
+    100% {
+        left: 0%;
+    }
 }
 
 .home-title span:before {
