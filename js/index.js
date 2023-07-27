@@ -23,7 +23,7 @@ const navLink = document.querySelectorAll('.nav-link')
 
 const linkAction = () => {
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
+        // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -39,24 +39,40 @@ const sr = ScrollReveal({
 
 sr.reveal(`.home-data, .projects-container, .contact-content`)
 sr.reveal(`.home-information div`, { delay: 600, origin: 'bottom', interval: 100 })
-sr.reveal(`.skills-content:nth-child(1)`, {interval: 100})
+sr.reveal(`.skills-content:nth-child(1)`, { interval: 100 })
 sr.reveal(`.qualificatin-content, .services-card`, { interval: 100 });
 
 let gotop = document.querySelector(".go-top");
 
-window.onscroll = function () {
-	// console.log(this.scrollY); // show number scroll
-	if (this.scrollY >= 900) {
-		gotop.classList.add("show")
-	} else {
-		gotop.classList.remove("show")
-	}
+window.onscroll = function() {
+    // console.log(this.scrollY); // show number scroll
+    if (this.scrollY >= 900) {
+        gotop.classList.add("show")
+    } else {
+        gotop.classList.remove("show")
+    }
 };
 
 // go to top
-gotop.onclick = function () {
-	window.scrollTo({
-		top: 0,
-		behavior: "smooth"
-	})
+gotop.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+let changegopTitle = document.querySelector('.home .home-title span');
+const textload = () => {
+    setTimeout(() => {
+        changegopTitle.textContent = 'front End Develober'
+    }, 0);
+    setTimeout(() => {
+        changegopTitle.textContent = 'ui ux'
+    }, 4000);
+    setTimeout(() => {
+        changegopTitle.textContent = 'bis'
+    }, 8000);
 }
+textload()
+setInterval
+    (textload, 12000)

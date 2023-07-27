@@ -1,4 +1,4 @@
-document.getElementById('contact-form').addEventListener('submit', function (event) {
+document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
     // Get the form values
@@ -11,10 +11,10 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
 
     // Send the email using emailJS
     emailjs.send('service_mlix524', 'template_3q4wxrp', formData, '6QvUOksXSN0oTjN1s')
-        .then(function (response) {
+        .then(function(response) {
             console.log('Email sent!', response.status, response.text);
             swal("email Done!", "Thank You", "success")
-        }, function (error) {
+        }, function(error) {
             console.log('Error sending email:', error);
             alert('An error occurred while sending the email.');
         });

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,9 +15,7 @@
     --body-color: rgb(255, 255, 255);
     --container-color: rgb(234, 234, 234);
     /* grad-color */
-    --gradient-color: linear-gradient(180deg,
-            rgba(149, 187, 218, 0.341),
-            rgb(224, 108, 108));
+    --gradient-color: linear-gradient(180deg, rgba(149, 187, 218, 0.341), rgb(224, 108, 108));
     /* font size */
     --body-font: 'Roboto', sans-serif;
     --title-font: 'Lora', serif;
@@ -53,7 +50,6 @@ li {
     text-align: center;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -77,6 +73,7 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 
 /* classes */
 
@@ -117,6 +114,7 @@ img {
     background-color: var(--body-color);
     /*for animation*/
 }
+
 
 /* ========== header & navgation ========== */
 
@@ -225,6 +223,31 @@ img {
     margin-bottom: 10px;
 }
 
+.home-title span {
+    animation: jopTitle 0.7s;
+}
+
+.home-title span:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5%;
+    width: 0%;
+    border-left: 2px solid #00C9F3;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%,
+    60% {
+        left: calc(100% + 4px);
+    }
+    100% {
+        left: 0%;
+    }
+}
+
 .home-blob {
     position: relative;
     width: 200px;
@@ -269,7 +292,6 @@ img {
     right: -50px; */
     transform: rotate(15deg);
     z-index: -1;
-
 }
 
 .home-social {
@@ -320,6 +342,7 @@ img {
     font-weight: var(--weigth-bold);
 }
 
+
 /* === START SKILLS === */
 
 .skills-container {
@@ -351,7 +374,6 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 20px;
     margin-bottom: 50px;
-
 }
 
 .skills-data {
@@ -382,9 +404,12 @@ img {
     color: var(--text-color-light);
 }
 
+
 /* === END SKILLS === */
 
+
 /* start qualificatin */
+
 .qualificatin {
     position: relative;
 }
@@ -417,7 +442,6 @@ img {
     margin-bottom: 20px;
 }
 
-
 .qualificatin-locatin,
 .qualificatin-year {
     display: block;
@@ -428,7 +452,6 @@ img {
 .qualificatin-locatin {
     margin-bottom: 10px;
 }
-
 
 .qualificatin-img {
     width: 150px;
@@ -456,7 +479,9 @@ img {
     opacity: 0.01;
 }
 
+
 /* end qualificatin */
+
 
 /* STRAT SERVICES */
 
@@ -533,6 +558,7 @@ img {
         display: block;
     }
 }
+
 
 /* END SERVICES */
 
@@ -790,6 +816,7 @@ img {
     color: var(--scondry-color)
 }
 
+
 /* ================ start scrollbar ================ */
 
 ::-webkit-scrollbar {
@@ -809,6 +836,7 @@ img {
     background: #ff3737;
 }
 
+
 /* ================ end scrollbar ================ */
 
 .go-top {
@@ -827,6 +855,7 @@ img {
 .show {
     right: 20px;
 }
+
 
 /* thems */
 
@@ -851,101 +880,85 @@ body.dark-theme {
     --container-color: rgb(102, 102, 102);
 }
 
+
 /* ========small device======== */
+
 @media screen and (mam-width: 340px) {
     .container {
         margin-inline: 15px;
     }
-
     .nav-menu {
         padding-bottom: 10px;
     }
-
     .nav-list {
         gap: 10px 15px;
     }
 }
 
+
 /* ======== meduiam device======== */
 
 @media screen and (min-width: 576px) {
-
     .nav,
     .nav-menu {
         width: 400px;
     }
-
     .nav {
         margin: 0 auto;
     }
-
     .skills-container {
         justify-content: center;
     }
-
     .projects-container {
         width: 400px;
         overflow: hidden;
     }
-
     @media screen and (min-width: 767px) {
         .home-container {
             grid-template-columns: 1fr 2fr 1fr;
         }
-
         .home-data {
             order: 2;
         }
-
         .home-information:nth-child(3) {
             order: 3;
             text-align: right;
         }
-
         .home-information {
             margin-top: 150px;
         }
-
         .skills-information {
             column-gap: 4rem;
             grid-template-columns: repeat(5, 1fr);
         }
-
         .qualificatin-container,
         .services-container,
         .contact-contanier {
             grid-template-columns: repeat(2, 1fr);
             text-align: center;
         }
-
         .services-container {
             display: flex;
             justify-content: center;
             align-items: center;
             column-gap: 4rem;
         }
-
         .projects-container {
             width: 600px;
         }
-
     }
-
     /* ========end device======== */
-
     /* ======== start larg device======== */
     @media screen and (min-width: 1023px) {
         .nav-logo {
             font-size: 20px;
         }
-
         .header {
             top: 0;
             bottom: initial;
             background-color: var(--body-color);
             transition: 0.4s;
         }
-
         .nav {
             width: initial;
             height: calc(var(--main-header) + 30px);
@@ -955,139 +968,108 @@ body.dark-theme {
             margin-inline: 22px;
             padding: 0;
         }
-
         .nav-link i,
         .nav-toggle,
         .nav-close {
             display: none;
         }
-
         .nav-menu {
             width: initial;
             margin-left: auto;
             background-color: var(--body-color);
             transition: background 0.4s;
         }
-
         .nav-list {
             display: flex;
             column-gap: 35px;
         }
-
         .nav-link {
             font-size: var(--normal-font-size);
         }
-
         .section {
             padding-block: 130px 0;
         }
-
         .home-title {
             font-size: 30px;
         }
     }
-
     @media screen and (min-width: 1048px) {
         .container {
             margin-inline: auto;
         }
-
         .projects-container {
             width: 900px;
         }
-
     }
-
     @media screen and (min-width: 1200px) {
         .nav-logo {
             font-size: 20px;
         }
-
         .section-border {
             padding-bottom: 100px;
         }
-
         .section-subtitle {
             margin-bottom: 5rem;
         }
-
         .home-title {
             font-size: 35px;
         }
-
         .home-blob {
             width: 400px;
             height: 580px;
             border-radius: 12.5rem;
         }
-
         .home-profile {
             width: 340px;
             height: 520px;
             border-radius: 10.6rem;
         }
-
         .footer-copyright {
             display: block;
             font-size: 22px;
             color: var(--scondry-color)
         }
-
     }
-
     /* ===================================== animation all ======================================= */
-
     .skills-blob:hover img {
         animation: hover-skills 0.7s;
     }
-
     @keyframes hover-skills {
         0% {
             transform: translate(0);
         }
-
         20% {
             transform: translateY(-5px);
         }
-
         40% {
             transform: translate(0);
         }
-
         60% {
             transform: translateY(-3px);
         }
-
         80% {
             transform: translate(0);
         }
     }
-
     @keyframes bn13bouncy {
         0% {
             top: 0em;
         }
-
         40% {
             top: 0em;
         }
-
         43% {
             top: -0.9em;
         }
-
         46% {
             top: 0em;
         }
-
         48% {
             top: -0.4em;
         }
-
         50% {
             top: 0em;
         }
-
         100% {
             top: 0em;
         }
