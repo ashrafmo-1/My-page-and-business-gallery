@@ -59,6 +59,7 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    text-transform: capitalize;
 }
 
 h1,
@@ -216,24 +217,37 @@ img {
     row-gap: 15PX;
 }
 
+.home-title {
+    margin-top: 5px;
+}
 
-/* .home-title {
+.name {
     text-align: center;
-    font-size: var(--big-font-size);
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-} */
+    line-height: 1.4;
+}
 
 .h-text {
-    padding-top: 200px;
-    margin-left: 60px;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .h-animate .text {
     position: relative;
-    color: #00C9F3;
+    color: var(--main-color);
     font-size: 30px;
-    font-weight: 600;
+    font-weight: var(--weigth-bold);
+}
+
+@media(max-width: 1188px) {
+    .h-animate .text {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 340px) {
+    .h-animate .text {
+        font-size: 13px;
+    }
 }
 
 .h-animate .text.first-text {
@@ -248,28 +262,7 @@ img {
     height: 100%;
     width: 100%;
     background-color: var(--body-color);
-    border-left: 2px solid #00C9F3;
-    animation: animate 4s steps(12) infinite;
-}
-
-@keyframes animate {
-    40%,
-    60% {
-        left: calc(100% + 4px);
-    }
-    100% {
-        left: 0%;
-    }
-}
-
-.home-title span:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 5%;
-    width: 0%;
-    border-left: 2px solid #00C9F3;
+    border-left: 2px solid var(--main-color);
     animation: animate 4s steps(12) infinite;
 }
 
