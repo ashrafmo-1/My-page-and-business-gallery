@@ -53,7 +53,39 @@ window.onscroll = function() {
     }
 };
 
-// go to top
+// start dark mood
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'fa-sun'
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'fa-moon' : 'fa-sun'
+
+// We validate if the user previously chose a topic
+if (selectedTheme) {
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+        // We save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
+// end dark mood
+
+// btn go to top
 gotop.onclick = function() {
     window.scrollTo({
         top: 0,
@@ -61,6 +93,7 @@ gotop.onclick = function() {
     });
 };
 
+// start typing jop titlr
 let changegopTitle = document.querySelector('.home .changegopTitle');
 const textload = () => {
     setTimeout(() => {
@@ -75,4 +108,28 @@ const textload = () => {
 }
 textload()
 setInterval
-    (textload, 12000)
+    (textload, 12000);
+// end typing jop titlr
+
+// sent Email form
+document.querySelector('#contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the form values
+    const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value
+    };
+    const msgSent = document.querySelector(".contact-message")
+
+    // Send the email using emailJS
+    emailjs.send('service_mlix524', 'template_3q4wxrp', formData, 'eTUmUdWl6qmQJtB1q')
+        .then(function(response) {
+            console.log('Email sent!', response.status, response.text);
+            swal("email Done!", "Thank You", "success")
+        }, function(error) {
+            console.log('Error sending email:', error);
+            msgSent.innerHTML = 'An error occurred while sending the email.'
+        });
+});
