@@ -94,13 +94,13 @@ gotop.onclick = function() {
 let changegopTitle = document.querySelector('.home .changegopTitle');
 const textload = () => {
     setTimeout(() => {
-        changegopTitle.textContent = 'front End Develober'
+        changegopTitle.innerHTML = 'front End Develober'
     }, 0);
     setTimeout(() => {
-        changegopTitle.textContent = 'ui ux'
+        changegopTitle.innerHTML = 'ui ux'
     }, 4000);
-    setTimeout(() => {
-        changegopTitle.textContent = 'bis'
+    setTimeout(function() {
+        changegopTitle.innerHTML = 'bis'
     }, 8000);
 }
 textload()
@@ -108,7 +108,7 @@ setInterval
     (textload, 12000);
 // end typing jop titlr
 
-// sent Email form
+// sent Email form emailjs
 document.querySelector('#contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -129,4 +129,15 @@ document.querySelector('#contact-form').addEventListener('submit', function(even
             console.log('Error sending email:', error);
             msgSent.innerHTML = 'An error occurred while sending the email.'
         });
+});
+
+// add animation on start page
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+
+    loader.classList.add("loader--hidden");
+
+    loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+    });
 });
