@@ -60,6 +60,7 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
     text-transform: capitalize;
+    user-select: none;
 }
 
 h1,
